@@ -15,6 +15,8 @@
   <releases>
     <release version="2.0.1-dev">
       Active development ...
+      Package Description (pdsc):
+      - Correct RCC_AHB2ENR register name in debug sequence comments
     </release>
     <release version="1.3.0" date="2024-04-04">
       Updated to STM32Cube_FW_H5 Firmware Package version V1.2.0
@@ -347,7 +349,7 @@ It is a full featured microcontroller class processor based on the ARMv8-M mainl
               portAdr = 0x42020000 + secOffs + (port * 0x400);
 
               pos = pin * 2;
-              Write32(0x44020C8C + secOffs, ((Read32(0x44020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
+              Write32(0x44020C8C + secOffs, ((Read32(0x44020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR:   IO port clock enable
               Write32(portAdr + 0x00, ((Read32(portAdr + 0x00) &amp; ~( 3 &lt;&lt; pos)) | (2 &lt;&lt; pos )) );  // GPIOx_MODER:   Set Mode (Alternate Function)
               Write32(portAdr + 0x08, ((Read32(portAdr + 0x08)                         ) | (3 &lt;&lt; pos )) );  // GPIOx_OSPEEDR: Set Speed (Very High Speed)
               Write32(portAdr + 0x0C, ((Read32(portAdr + 0x0C) &amp; ~( 3 &lt;&lt; pos))                    ) );  // GPIOx_PUPDR:   Set I/O to no pull-up/pull-down
@@ -373,7 +375,7 @@ It is a full featured microcontroller class processor based on the ARMv8-M mainl
               portAdr = 0x42020000 + secOffs + (port * 0x400);
 
               pos = pin * 2;
-              Write32(0x44020C8C + secOffs, ((Read32(0x44020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
+              Write32(0x44020C8C + secOffs, ((Read32(0x44020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR:   IO port clock enable
               Write32(portAdr + 0x00, ((Read32(portAdr + 0x00) &amp; ~( 3 &lt;&lt; pos)) | (2 &lt;&lt; pos )) );  // GPIOx_MODER:   Set Mode (Alternate Function)
               Write32(portAdr + 0x08, ((Read32(portAdr + 0x08)                         ) | (3 &lt;&lt; pos )) );  // GPIOx_OSPEEDR: Set Speed (Very High Speed)
               Write32(portAdr + 0x0C, ((Read32(portAdr + 0x0C) &amp; ~( 3 &lt;&lt; pos))                    ) );  // GPIOx_PUPDR:   Set I/O to no pull-up/pull-down
@@ -400,7 +402,7 @@ It is a full featured microcontroller class processor based on the ARMv8-M mainl
               portAdr = 0x42020000 + secOffs + (port * 0x400);
 
               pos = pin * 2;
-              Write32(0x44020C8C + secOffs, ((Read32(0x44020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
+              Write32(0x44020C8C + secOffs, ((Read32(0x44020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR:   IO port clock enable
               Write32(portAdr + 0x00, ((Read32(portAdr + 0x00) &amp; ~( 3 &lt;&lt; pos)) | (2 &lt;&lt; pos )) );  // GPIOx_MODER:   Set Mode (Alternate Function)
               Write32(portAdr + 0x08, ((Read32(portAdr + 0x08)                         ) | (3 &lt;&lt; pos )) );  // GPIOx_OSPEEDR: Set Speed (Very High Speed)
               Write32(portAdr + 0x0C, ((Read32(portAdr + 0x0C) &amp; ~( 3 &lt;&lt; pos))                    ) );  // GPIOx_PUPDR:   Set I/O to no pull-up/pull-down
@@ -427,7 +429,7 @@ It is a full featured microcontroller class processor based on the ARMv8-M mainl
               portAdr = 0x42020000 + secOffs + (port * 0x400);
 
               pos = pin * 2;
-              Write32(0x44020C8C + secOffs, ((Read32(0x44020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
+              Write32(0x44020C8C + secOffs, ((Read32(0x44020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR:   IO port clock enable
               Write32(portAdr + 0x00, ((Read32(portAdr + 0x00) &amp; ~( 3 &lt;&lt; pos)) | (2 &lt;&lt; pos )) );  // GPIOx_MODER:   Set Mode (Alternate Function)
               Write32(portAdr + 0x08, ((Read32(portAdr + 0x08)                         ) | (3 &lt;&lt; pos )) );  // GPIOx_OSPEEDR: Set Speed (Very High Speed)
               Write32(portAdr + 0x0C, ((Read32(portAdr + 0x0C) &amp; ~( 3 &lt;&lt; pos))                    ) );  // GPIOx_PUPDR:   Set I/O to no pull-up/pull-down
@@ -452,7 +454,7 @@ It is a full featured microcontroller class processor based on the ARMv8-M mainl
               portAdr = 0x42020000 + secOffs + (port * 0x400);
 
               pos = pin * 2;
-              Write32(0x44020C8C + secOffs, ((Read32(0x44020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR1:  IO port clock enable
+              Write32(0x44020C8C + secOffs, ((Read32(0x44020C8C + secOffs)             ) | (1 &lt;&lt; port)) );  // RCC_AHB2ENR:   IO port clock enable
               Write32(portAdr + 0x00, ((Read32(portAdr + 0x00) &amp; ~( 3 &lt;&lt; pos)) | (2 &lt;&lt; pos )) );  // GPIOx_MODER:   Set Mode (Alternate Function)
               Write32(portAdr + 0x08, ((Read32(portAdr + 0x08)                         ) | (3 &lt;&lt; pos )) );  // GPIOx_OSPEEDR: Set Speed (Very High Speed)
               Write32(portAdr + 0x0C, ((Read32(portAdr + 0x0C) &amp; ~( 3 &lt;&lt; pos))                    ) );  // GPIOx_PUPDR:   Set I/O to no pull-up/pull-down
