@@ -13,14 +13,8 @@
   </licenseSets>
 
   <releases>
-    <release version="2.0.3-dev">
+    <release version="2.1.1-dev">
       Active development ...
-      Updateed Templates:
-      - Added DWARF-5 debug information
-      - Added generated output files
-      Package Description (pdsc):
-      - Correct RCC_AHB2ENR register name in debug sequence comments
-      Updated documentation references
     </release>
     <release version="1.3.0" date="2024-04-04">
       Updated to STM32Cube_FW_H5 Firmware Package version V1.2.0
