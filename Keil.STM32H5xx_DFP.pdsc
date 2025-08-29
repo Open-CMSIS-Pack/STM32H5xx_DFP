@@ -15,6 +15,9 @@
   <releases>
     <release version="2.1.1-dev">
       Active development ...
+      Updated debug configuration files
+      Package Description (pdsc):
+      - Shortened device family description
     </release>
     <release version="1.3.0" date="2024-04-04">
       Updated to STM32Cube_FW_H5 Firmware Package version V1.2.0
@@ -68,8 +71,7 @@
     <family Dfamily="STM32H5 Series" Dvendor="STMicroelectronics:13">
       <processor Dcore="Cortex-M33" DcoreVersion="r0p0" Dfpu="SP_FPU" Dmpu="MPU" Ddsp="DSP" Dendian="Little-endian" Dclock="240000000"/>
       <description>
-The ARM Cortex-M33 based Microcontroller with FPU(Floating-Point Unit)is the most configurable of all Cortex-M processors.
-It is a full featured microcontroller class processor based on the ARMv8-M mainline architecture with ARM TrustZone security.
+High-performance STM32H5 MCUs with Arm Cortex-M33 core, MPU, instruction cache, DSP, FPU, 375 DMIPS at 250 MHz.
       </description>
 
       <book name="https://developer.arm.com/documentation/100235/latest/" title="Arm Cortex-M33 Devices"/>
@@ -483,13 +485,13 @@ It is a full featured microcontroller class processor based on the ARMv8-M mainl
         <book name="https://www.st.com/resource/en/reference_manual/rm0481-stm32h52333xx-stm32h56263xx-and-stm32h573xx-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32H523/33xx, STM32H562/63xx and STM32H573xx Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32h562ag.pdf" title="STM32H562xx and STM32H563xx Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32H562xx_H563xx_H573xx.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32H562xx_H563xx_H573xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000006;   // DBGMCU_CR: DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1L_Fz = 0x00000000;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1H_Fz = 0x00000000;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB3_Fz  = 0x00000000;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_AHB1_Fz  = 0x00000000;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1L_Fz = 0x00E019FF;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1H_Fz = 0x00000020;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB3_Fz  = 0x003E0C00;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_AHB1_Fz  = 0x00FF00FF;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -613,13 +615,13 @@ It is a full featured microcontroller class processor based on the ARMv8-M mainl
         <book name="https://www.st.com/resource/en/reference_manual/rm0481-stm32h52333xx-stm32h56263xx-and-stm32h573xx-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32H523/33xx, STM32H562/63xx and STM32H573xx Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32h562ag.pdf" title="STM32H562xx and STM32H563xx Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32H562xx_H563xx_H573xx.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32H562xx_H563xx_H573xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000006;   // DBGMCU_CR: DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1L_Fz = 0x00000000;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1H_Fz = 0x00000000;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB3_Fz  = 0x00000000;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_AHB1_Fz  = 0x00000000;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1L_Fz = 0x00E019FF;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1H_Fz = 0x00000020;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB3_Fz  = 0x003E0C00;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_AHB1_Fz  = 0x00FF00FF;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -778,13 +780,13 @@ It is a full featured microcontroller class processor based on the ARMv8-M mainl
         <book name="https://www.st.com/resource/en/reference_manual/rm0481-stm32h52333xx-stm32h56263xx-and-stm32h573xx-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32H523/33xx, STM32H562/63xx and STM32H573xx Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32h573ai.pdf" title="STM32H573xx Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32H562xx_H563xx_H573xx.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32H562xx_H563xx_H573xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000006;   // DBGMCU_CR: DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1L_Fz = 0x00000000;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1H_Fz = 0x00000000;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB3_Fz  = 0x00000000;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_AHB1_Fz  = 0x00000000;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1L_Fz = 0x00E019FF;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1H_Fz = 0x00000020;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB3_Fz  = 0x003E0C00;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_AHB1_Fz  = 0x00FF00FF;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -893,13 +895,13 @@ It is a full featured microcontroller class processor based on the ARMv8-M mainl
         <book name="https://www.st.com/resource/en/reference_manual/rm0492-stm32h503-line-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32H503xx Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32h503eb.pdf" title="STM32H503xx Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32H503xx.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32H503xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000006;   // DBGMCU_CR: DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1L_Fz = 0x00000000;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1H_Fz = 0x00000000;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB3_Fz  = 0x00000000;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_AHB1_Fz  = 0x00000000;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1L_Fz = 0x00E01833;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1H_Fz = 0x00000020;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00000800;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB3_Fz  = 0x00021000;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_AHB1_Fz  = 0x00FF00FF;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00010005;   // PB5
           __var TraceD0_Pin     = 0x00010006;   // PB6
           __var TraceD1_Pin     = 0x00010007;   // PB7
@@ -947,13 +949,13 @@ It is a full featured microcontroller class processor based on the ARMv8-M mainl
         <book name="https://www.st.com/resource/en/reference_manual/rm0481-stm32h52333xx-stm32h56263xx-and-stm32h573xx-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32H523/33xx, STM32H562/63xx and STM32H573xx Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32h523ce.pdf" title="STM32H523xx Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32H562xx_H563xx_H573xx.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32H562xx_H563xx_H573xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000006;   // DBGMCU_CR: DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1L_Fz = 0x00000000;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1H_Fz = 0x00000000;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB3_Fz  = 0x00000000;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_AHB1_Fz  = 0x00000000;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1L_Fz = 0x00E019FF;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1H_Fz = 0x00000020;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB3_Fz  = 0x003E0C00;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_AHB1_Fz  = 0x00FF00FF;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1076,13 +1078,13 @@ It is a full featured microcontroller class processor based on the ARMv8-M mainl
         <book name="https://www.st.com/resource/en/reference_manual/rm0481-stm32h52333xx-stm32h56263xx-and-stm32h573xx-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32H523/33xx, STM32H562/63xx and STM32H573xx Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32h533ce.pdf" title="STM32H533xx Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32H562xx_H563xx_H573xx.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32H562xx_H563xx_H573xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000006;   // DBGMCU_CR: DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1L_Fz = 0x00000000;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1H_Fz = 0x00000000;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB3_Fz  = 0x00000000;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
-          __var DbgMCU_AHB1_Fz  = 0x00000000;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1L_Fz = 0x00E019FF;   // DGBMCU_APB1LFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1H_Fz = 0x00000020;   // DGBMCU_APB1HFZR: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00072800;   // DGBMCU_APB2FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB3_Fz  = 0x003E0C00;   // DBGMCU_APB3FZR : All Peripherals Operate as in Normal Mode
+          __var DbgMCU_AHB1_Fz  = 0x00FF00FF;   // DBGMCU_AHB1FZR : All Peripherals Operate as in Normal Mode
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
