@@ -1159,6 +1159,11 @@ High-performance STM32H5 MCUs with Arm Cortex-M33 core, MPU, instruction cache, 
       <require Dvendor="STMicroelectronics:13" Dname="STM32H5*"/>
     </condition>
 
+    <condition id="STM32H5 with TZ">
+      <description>STMicroelectronics STM32H5 Devices</description>
+      <require Dvendor="STMicroelectronics:13" Dname="STM32H5*" Dtz="TZ" />
+    </condition>
+
     <!-- Device + CMSIS Conditions -->
     <condition id="STM32H5 CMSIS">
       <description>STMicroelectronics STM32H5 Device and CMSIS-CORE</description>
@@ -1189,7 +1194,7 @@ High-performance STM32H5 MCUs with Arm Cortex-M33 core, MPU, instruction cache, 
     </template>
 
     <!-- CubeMX TrustZone CMSIS Solution template -->
-    <template name="CubeMX TrustZone solution" path="Templates/CubeMX_TZ" file="CubeMX_TZ.csolution.yml" condition="STM32H5">
+    <template name="CubeMX TrustZone solution" path="Templates/CubeMX_TZ" file="CubeMX_TZ.csolution.yml" condition="STM32H5 with TZ">
       <description>Create a CubeMX TrustZone solution with secure and non-secure projects</description>
     </template>
 
