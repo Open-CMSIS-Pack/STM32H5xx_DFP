@@ -66,7 +66,7 @@
 
   <devices>
     <family Dfamily="STM32H5 Series" Dvendor="STMicroelectronics:13">
-      <processor Dcore="Cortex-M33" DcoreVersion="r0p0" Dfpu="SP_FPU" Dmpu="MPU" Ddsp="DSP" Dendian="Little-endian" Dclock="240000000"/>
+      <processor Dcore="Cortex-M33" DcoreVersion="r0p0" Dfpu="SP_FPU" Dmpu="MPU" Ddsp="DSP" Dendian="Little-endian" Dclock="250000000"/>
       <description>
 High-performance STM32H5 MCUs with Arm Cortex-M33 core, MPU, instruction cache, DSP, FPU, 375 DMIPS at 250 MHz.
       </description>
