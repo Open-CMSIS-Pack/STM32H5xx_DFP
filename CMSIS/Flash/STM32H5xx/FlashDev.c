@@ -192,4 +192,76 @@
     SECTOR_END
   };
 #endif
+	
+#ifdef STM32H5xx_4096_0x08
+  struct FlashDevice const FlashDevice  =  {
+    FLASH_DRV_VERS,                    /* Driver Version, do not modify! */
+    "STM32H5xx 4M NSecure Flash",      /* Device Name */
+    ONCHIP,                            /* Device Type */
+    0x08000000,                        /* Device Start Address */
+    0x00400000,                        /* Device Size in Bytes (2048 kB) */
+    1024,                              /* Programming Page Size */
+    0,                                 /* Reserved, must be 0 */
+    0xFF,                              /* Initial Content of Erased Memory */
+    400,                               /* Program Page Timeout 400 mSec */
+    400,                               /* Erase Sector Timeout 400 mSec */
+    /* Specify Size and Address of Sectors */
+    0x2000, 0x000000,                  /* Sector Size 8kB (512 sectors) */
+    SECTOR_END
+  };
+#endif	
+#ifdef STM32H5xx_4096_0x0C
+  struct FlashDevice const FlashDevice  =  {
+    FLASH_DRV_VERS,                    /* Driver Version, do not modify! */
+    "STM32H5xx 4M Secure Flash",       /* Device Name */
+    ONCHIP,                            /* Device Type */
+    0x0C000000,                        /* Device Start Address */
+    0x00400000,                        /* Device Size in Bytes (2048 kB) */
+    1024,                              /* Programming Page Size */
+    0,                                 /* Reserved, must be 0 */
+    0xFF,                              /* Initial Content of Erased Memory */
+    400,                               /* Program Page Timeout 400 mSec */
+    400,                               /* Erase Sector Timeout 400 mSec */
+    /* Specify Size and Address of Sectors */
+    0x2000, 0x000000,                  /* Sector Size 8kB (512 sectors) */
+    SECTOR_END
+  };
+#endif
+
+#ifdef STM32H5xx_3072_0x08
+  struct FlashDevice const FlashDevice  =  {
+    FLASH_DRV_VERS,                    /* Driver Version, do not modify! */
+    "STM32H5xx 3M NSecure Flash",      /* Device Name */
+    ONCHIP,                            /* Device Type */
+    0x08000000,                        /* Device Start Address */
+    0x00300000,                        /* Device Size in Bytes (2048 kB) */
+    1024,                              /* Programming Page Size */
+    0,                                 /* Reserved, must be 0 */
+    0xFF,                              /* Initial Content of Erased Memory */
+    400,                               /* Program Page Timeout 400 mSec */
+    400,                               /* Erase Sector Timeout 400 mSec */
+    /* Specify Size and Address of Sectors */
+    0x2000, 0x000000,                  /* Sector Size 8kB (384 sectors) */
+    SECTOR_END
+  };
+#endif	
+
+#ifdef STM32H5xx_3072_0x0C
+  struct FlashDevice const FlashDevice  =  {
+    FLASH_DRV_VERS,                    /* Driver Version, do not modify! */
+    "STM32H5xx 3M Secure Flash",       /* Device Name */
+    ONCHIP,                            /* Device Type */
+    0x0C000000,                        /* Device Start Address */
+    0x00300000,                        /* Device Size in Bytes (2048 kB) */
+    1024,                              /* Programming Page Size */
+    0,                                 /* Reserved, must be 0 */
+    0xFF,                              /* Initial Content of Erased Memory */
+    400,                               /* Program Page Timeout 400 mSec */
+    400,                               /* Erase Sector Timeout 400 mSec */
+    /* Specify Size and Address of Sectors */
+    0x2000, 0x000000,                  /* Sector Size 8kB (384 sectors) */
+    SECTOR_END
+  };
+#endif
+
 #endif /* FLASH_MEM */

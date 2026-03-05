@@ -56,85 +56,99 @@ typedef struct {
 // Flash Registers
 typedef struct
 {
-  vu32 ACR;              /* offset: 0x000 FLASH access control register */
-  vu32 NSKEYR;           /* offset: 0x004 FLASH non-secure key register */
-  vu32 SECKEYR;          /* offset: 0x008 FLASH secure key register */
-  vu32 OPTKEYR;          /* offset: 0x00C FLASH option key register */
-  vu32 NSOBKKEYR;        /* offset: 0x010 FLASH non-secure option bytes keys key register */
-  vu32 SECOBKKEYR;       /* offset: 0x014 FLASH secure option bytes keys key register */
-  vu32 OPSR;             /* offset: 0x018 FLASH OPSR register */
-  vu32 OPTCR;            /* offset: 0x01C Flash Option Control Register */
-  vu32 NSSR;             /* offset: 0x020 FLASH non-secure status register */
-  vu32 SECSR;            /* offset: 0x024 FLASH secure status register */
-  vu32 NSCR;             /* offset: 0x028 FLASH non-secure control register */
-  vu32 SECCR;            /* offset: 0x02C FLASH secure control register */
-  vu32 NSCCR;            /* offset: 0x030 FLASH non-secure clear control register */
-  vu32 SECCCR;           /* offset: 0x034 FLASH secure clear control register */
-  vu32 RESERVED1;        /* offset: 0x038 */
-  vu32 PRIVCFGR;         /* offset: 0x03C FLASH privilege configuration register */
-  vu32 NSOBKCFGR;        /* offset: 0x040 FLASH non-secure option byte key configuration register */
-  vu32 SECOBKCFGR;       /* offset: 0x044 FLASH secure option byte key configuration register */
-  vu32 HDPEXTR;          /* offset: 0x048 FLASH HDP extension register */
-  vu32 RESERVED2;        /* offset: 0x04C*/
-  vu32 OPTSR_CUR;        /* offset: 0x050 FLASH option status current register,                          */
-  vu32 OPTSR_PRG;        /* offset: 0x054 FLASH option status to program register */
-  vu32 RESERVED3[2];     /* offset: 0x058-0x05C */
-  vu32 NSEPOCHR_CUR;     /* offset: 0x060 FLASH non-secure epoch current register */
-  vu32 NSEPOCHR_PRG;     /* offset: 0x064 FLASH non-secure epoch to program register */
-  vu32 SECEPOCHR_CUR;    /* offset: 0x068 FLASH secure epoch current register */
-  vu32 SECEPOCHR_PRG;    /* offset: 0x06C FLASH secure epoch to program register */
-  vu32 OPTSR2_CUR;       /* offset: 0x070 FLASH option status current register 2 */
-  vu32 OPTSR2_PRG;       /* offset: 0x074 FLASH option status to program register 2 */
-  vu32 RESERVED4[2];     /* offset: 0x078-0x07C */
-  vu32 NSBOOTR_CUR;      /* offset: 0x080 FLASH non-secure unique boot entry current register */
-  vu32 NSBOOTR_PRG;      /* offset: 0x084 FLASH non-secure unique boot entry to program register */
-  vu32 SECBOOTR_CUR;     /* offset: 0x088 FLASH secure unique boot entry current register */
-  vu32 SECBOOTR_PRG;     /* offset: 0x08C FLASH secure unique boot entry to program register */
-  vu32 OTPBLR_CUR;       /* offset: 0x090 FLASH OTP block lock current register */
-  vu32 OTPBLR_PRG;       /* offset: 0x094 FLASH OTP block Lock to program register */
-  vu32 RESERVED5[2];     /* offset: 0x098-0x09C */
-  vu32 SECBB1R1;         /* offset: 0x0A0 FLASH secure block-based bank 1 register 1 */
-  vu32 SECBB1R2;         /* offset: 0x0A4 FLASH secure block-based bank 1 register 2 */
-  vu32 SECBB1R3;         /* offset: 0x0A8 FLASH secure block-based bank 1 register 3 */
-  vu32 SECBB1R4;         /* offset: 0x0AC FLASH secure block-based bank 1 register 4 */
-  vu32 RESERVED6[4];     /* offset: 0x0B0-0x0BC */
-  vu32 PRIVBB1R1;        /* offset: 0x0C0 FLASH privilege block-based bank 1 register 1 */
-  vu32 PRIVBB1R2;        /* offset: 0x0C4 FLASH privilege block-based bank 1 register 2 */
-  vu32 PRIVBB1R3;        /* offset: 0x0C8 FLASH privilege block-based bank 1 register 3 */
-  vu32 PRIVBB1R4;        /* offset: 0x0CC FLASH privilege block-based bank 1 register 4 */
-  vu32 RESERVED7[4];     /* offset: 0x0D0-0x0DC */
-  vu32 SECWM1R_CUR;      /* offset: 0x0E0 FLASH secure watermark 1 current register */
-  vu32 SECWM1R_PRG;      /* offset: 0x0E4 FLASH secure watermark 1 to program register */
-  vu32 WRP1R_CUR;        /* offset: 0x0E8 FLASH write sector group protection current register for bank1 */
-  vu32 WRP1R_PRG;        /* offset: 0x0EC FLASH write sector group protection to program register for bank1 */
-  vu32 EDATA1R_CUR;      /* offset: 0x0F0 FLASH data sectors configuration current register for bank1 */
-  vu32 EDATA1R_PRG;      /* offset: 0x0F4 FLASH data sectors configuration to program register for bank1 */
-  vu32 HDP1R_CUR;        /* offset: 0x0F8 FLASH HDP configuration current register for bank1 */
-  vu32 HDP1R_PRG;        /* offset: 0x0FC FLASH HDP configuration to program register for bank1 */
-  vu32 ECCCORR;          /* offset: 0x100 FLASH ECC correction register */
-  vu32 ECCDETR;          /* offset: 0x104 FLASH ECC detection register */
-  vu32 ECCDR;            /* offset: 0x108 FLASH ECC data register */
-  vu32 RESERVED8[37];    /* offset: 0x10C-0x19C */
-  vu32 SECBB2R1;         /* offset: 0x1A0 FLASH secure block-based bank 2 register 1 */
-  vu32 SECBB2R2;         /* offset: 0x1A4 FLASH secure block-based bank 2 register 2 */
-  vu32 SECBB2R3;         /* offset: 0x1A8 FLASH secure block-based bank 2 register 3 */
-  vu32 SECBB2R4;         /* offset: 0x1AC FLASH secure block-based bank 2 register 4 */
-  vu32 RESERVED9[4];     /* offset: 0x1B0-0x1BC */
-  vu32 PRIVBB2R1;        /* offset: 0x1C0 FLASH privilege block-based bank 2 register 1 */
-  vu32 PRIVBB2R2;        /* offset: 0x1C4 FLASH privilege block-based bank 2 register 2 */
-  vu32 PRIVBB2R3;        /* offset: 0x1C8 FLASH privilege block-based bank 2 register 3 */
-  vu32 PRIVBB2R4;        /* offset: 0x1CC FLASH privilege block-based bank 2 register 4 */
-  vu32 RESERVED10[4];    /* offset: 0x1D0-0x1DC */
-  vu32 SECWM2R_CUR;      /* offset: 0x1E0 FLASH secure watermark 2 current register */
-  vu32 SECWM2R_PRG;      /* offset: 0x1E4 FLASH secure watermark 2 to program register */
-  vu32 WRP2R_CUR;        /* offset: 0x1E8 FLASH write sector group protection current register for bank2 */
-  vu32 WRP2R_PRG;        /* offset: 0x1EC FLASH write sector group protection to program register for bank2 */
-  vu32 EDATA2R_CUR;      /* offset: 0x1F0 FLASH data sectors configuration current register for bank2 */
-  vu32 EDATA2R_PRG;      /* offset: 0x1F4 FLASH data sectors configuration to program register for bank2 */
-  vu32 HDP2R_CUR;        /* offset: 0x1F8 FLASH HDP configuration current register for bank2 */
-  vu32 HDP2R_PRG;        /* offset: 0x1FC FLASH HDP configuration to program register for bank2 */
+  vu32 ACR;             /*!< FLASH access control register,                                     Address offset: 0x00 */
+  vu32 NSKEYR;          /*!< FLASH non-secure key register,                                     Address offset: 0x04 */
+  vu32 SECKEYR;         /*!< FLASH secure key register,                                         Address offset: 0x08 */
+  vu32 OPTKEYR;         /*!< FLASH option key register,                                         Address offset: 0x0C */
+  vu32 NSOBKKEYR;       /*!< FLASH non-secure option bytes keys key register,                   Address offset: 0x10 */
+  vu32 SECOBKKEYR;      /*!< FLASH secure option bytes keys key register,                       Address offset: 0x14 */
+  vu32 OPSR;            /*!< FLASH OPSR register,                                               Address offset: 0x18 */
+  vu32 OPTCR;           /*!< Flash Option Control Register,                                     Address offset: 0x1C */
+  vu32 NSSR;            /*!< FLASH non-secure status register,                                  Address offset: 0x20 */
+  vu32 SECSR;           /*!< FLASH secure status register,                                      Address offset: 0x24 */
+  vu32 NSCR;            /*!< FLASH non-secure control register,                                 Address offset: 0x28 */
+  vu32 SECCR;           /*!< FLASH secure control register,                                     Address offset: 0x2C */
+  vu32 NSCCR;           /*!< FLASH non-secure clear control register,                           Address offset: 0x30 */
+  vu32 SECCCR;          /*!< FLASH secure clear control register,                               Address offset: 0x34 */
+  vu32 RESERVED1;       /*!< Reserved1,                                                         Address offset: 0x38 */
+  vu32 PRIVCFGR;        /*!< FLASH privilege configuration register,                            Address offset: 0x3C */
+  vu32 NSOBKCFGR;       /*!< FLASH non-secure option byte key configuration register,           Address offset: 0x40 */
+  vu32 SECOBKCFGR;      /*!< FLASH secure option byte key configuration register,               Address offset: 0x44 */
+  vu32 HDPEXTR;         /*!< FLASH HDP extension register,                                      Address offset: 0x48 */
+  vu32 RESERVED2;       /*!< Reserved2,                                                         Address offset: 0x4C */
+  vu32 OPTSR_CUR;       /*!< FLASH option status current register,                              Address offset: 0x50 */
+  vu32 OPTSR_PRG;       /*!< FLASH option status to program register,                           Address offset: 0x54 */
+  vu32 RESERVED3[2];    /*!< Reserved3,                                                         Address offset: 0x58-0x5C */
+  vu32 NSEPOCHR_CUR;    /*!< FLASH non-secure epoch current register,                           Address offset: 0x60 */
+  vu32 NSEPOCHR_PRG;    /*!< FLASH non-secure epoch to program register,                        Address offset: 0x64 */
+  vu32 SECEPOCHR_CUR;   /*!< FLASH secure epoch current register,                               Address offset: 0x68 */
+  vu32 SECEPOCHR_PRG;   /*!< FLASH secure epoch to program register,                            Address offset: 0x6C */
+  vu32 OPTSR2_CUR;      /*!< FLASH option status current register 2,                            Address offset: 0x70 */
+  vu32 OPTSR2_PRG;      /*!< FLASH option status to program register 2,                         Address offset: 0x74 */
+  vu32 RESERVED4[2];    /*!< Reserved4,                                                         Address offset: 0x78-0x7C */
+  vu32 NSBOOTR_CUR;     /*!< FLASH non-secure unique boot entry current register,               Address offset: 0x80 */
+  vu32 NSBOOTR_PRG;     /*!< FLASH non-secure unique boot entry to program register,            Address offset: 0x84 */
+  vu32 SECBOOTR_CUR;    /*!< FLASH secure unique boot entry current register,                   Address offset: 0x88 */
+  vu32 SECBOOTR_PRG;    /*!< FLASH secure unique boot entry to program register,                Address offset: 0x8C */
+  vu32 OTPBLR_CUR;      /*!< FLASH OTP block lock current register,                             Address offset: 0x90 */
+  vu32 OTPBLR_PRG;      /*!< FLASH OTP block Lock to program register,                          Address offset: 0x94 */
+  vu32 WRP12R_CUR;      /*!< FLASH write sector group 1 protection for Bank2 current register    Address offset: 0x98 */
+  vu32 WRP12R_PRG;      /*!< FLASH write sector group 1 protection for Bank2 to program register Address offset: 0x9C */
+  vu32 SECBB1R1;        /*!< FLASH secure block-based bank 1 register 1,                        Address offset: 0xA0 */
+  vu32 SECBB1R2;        /*!< FLASH secure block-based bank 1 register 2,                        Address offset: 0xA4 */
+  vu32 SECBB1R3;        /*!< FLASH secure block-based bank 1 register 3,                        Address offset: 0xA8 */
+  vu32 SECBB1R4;        /*!< FLASH secure block-based bank 1 register 4,                        Address offset: 0xAC */
+  vu32 SECBB1R5;        /*!< FLASH secure block-based bank 1 register 5,                        Address offset: 0xB0 */
+  vu32 SECBB1R6;        /*!< FLASH secure block-based bank 1 register 6,                        Address offset: 0xB4 */
+  vu32 SECBB1R7;        /*!< FLASH secure block-based bank 1 register 7,                        Address offset: 0xB8 */
+  vu32 SECBB1R8;        /*!< FLASH secure block-based bank 1 register 8,                        Address offset: 0xBC */
+  vu32 PRIVBB1R1;       /*!< FLASH privilege block-based bank 1 register 1,                     Address offset: 0xC0 */
+  vu32 PRIVBB1R2;       /*!< FLASH privilege block-based bank 1 register 2,                     Address offset: 0xC4 */
+  vu32 PRIVBB1R3;       /*!< FLASH privilege block-based bank 1 register 3,                     Address offset: 0xC8 */
+  vu32 PRIVBB1R4;       /*!< FLASH privilege block-based bank 1 register 4,                     Address offset: 0xCC */
+  vu32 PRIVBB1R5;       /*!< FLASH privilege block-based bank 1 register 5,                     Address offset: 0xD0 */
+  vu32 PRIVBB1R6;       /*!< FLASH privilege block-based bank 1 register 6,                     Address offset: 0xD4 */
+  vu32 PRIVBB1R7;       /*!< FLASH privilege block-based bank 1 register 7,                     Address offset: 0xD8 */
+  vu32 PRIVBB1R8;       /*!< FLASH privilege block-based bank 1 register 8,                     Address offset: 0xDC */
+  vu32 SECWM1R_CUR;     /*!< FLASH secure watermark 1 current register,                         Address offset: 0xE0 */
+  vu32 SECWM1R_PRG;     /*!< FLASH secure watermark 1 to program register,                      Address offset: 0xE4 */
+  vu32 WRP11R_CUR;      /*!< FLASH write sector group protection current register for bank1,    Address offset: 0xE8 */
+  vu32 WRP11R_PRG;      /*!< FLASH write sector group protection to program register for bank1, Address offset: 0xEC */
+  vu32 EDATA1R_CUR;     /*!< FLASH data sectors configuration current register for bank1,       Address offset: 0xF0 */
+  vu32 EDATA1R_PRG;     /*!< FLASH data sectors configuration to program register for bank1,    Address offset: 0xF4 */
+  vu32 HDP1R_CUR;       /*!< FLASH HDP configuration current register for bank1,                Address offset: 0xF8 */
+  vu32 HDP1R_PRG;       /*!< FLASH HDP configuration to program register for bank1,             Address offset: 0xFC */
+  vu32 ECCCORR;         /*!< FLASH ECC correction register,                                     Address offset: 0x100 */
+  vu32 ECCDETR;         /*!< FLASH ECC detection register,                                      Address offset: 0x104 */
+  vu32 ECCDR;           /*!< FLASH ECC data register,                                           Address offset: 0x108 */
+  vu32 RESERVED8[35];   /*!< Reserved8,                                                         Address offset: 0x10C-0x194 */
+  vu32 WRP22R_CUR;      /*!< FLASH write sector group 2 protection for Bank2 current register    Address offset: 0x198 */
+  vu32 WRP22R_PRG;      /*!< FLASH write sector group 2 protection for Bank2 to program register Address offset: 0x19C */
+  vu32 SECBB2R1;        /*!< FLASH secure block-based bank 2 register 1,                        Address offset: 0x1A0 */
+  vu32 SECBB2R2;        /*!< FLASH secure block-based bank 2 register 2,                        Address offset: 0x1A4 */
+  vu32 SECBB2R3;        /*!< FLASH secure block-based bank 2 register 3,                        Address offset: 0x1A8 */
+  vu32 SECBB2R4;        /*!< FLASH secure block-based bank 2 register 4,                        Address offset: 0x1AC */
+  vu32 SECBB2R5;        /*!< FLASH secure block-based bank 2 register 5,                        Address offset: 0x1B0 */
+  vu32 SECBB2R6;        /*!< FLASH secure block-based bank 2 register 6,                        Address offset: 0x1B4 */
+  vu32 SECBB2R7;        /*!< FLASH secure block-based bank 2 register 7,                        Address offset: 0x1B8 */
+  vu32 SECBB2R8;        /*!< FLASH secure block-based bank 2 register 8,                        Address offset: 0x1BC */
+  vu32 PRIVBB2R1;       /*!< FLASH privilege block-based bank 2 register 1,                     Address offset: 0x1C0 */
+  vu32 PRIVBB2R2;       /*!< FLASH privilege block-based bank 2 register 2,                     Address offset: 0x1C4 */
+  vu32 PRIVBB2R3;       /*!< FLASH privilege block-based bank 2 register 3,                     Address offset: 0x1C8 */
+  vu32 PRIVBB2R4;       /*!< FLASH privilege block-based bank 2 register 4,                     Address offset: 0x1CC */
+  vu32 PRIVBB2R5;       /*!< FLASH privilege block-based bank 2 register 5,                     Address offset: 0x1D0 */
+  vu32 PRIVBB2R6;       /*!< FLASH privilege block-based bank 2 register 6,                     Address offset: 0x1D4 */
+  vu32 PRIVBB2R7;       /*!< FLASH privilege block-based bank 2 register 7,                     Address offset: 0x1D8 */
+  vu32 PRIVBB2R8;       /*!< FLASH privilege block-based bank 2 register 8,                     Address offset: 0x1DC */
+  vu32 SECWM2R_CUR;     /*!< FLASH secure watermark 2 current register,                         Address offset: 0x1E0 */
+  vu32 SECWM2R_PRG;     /*!< FLASH secure watermark 2 to program register,                      Address offset: 0x1E4 */
+  vu32 WRP21R_CUR;       /*!< FLASH write sector group protection current register for bank2,    Address offset: 0x1E8 */
+  vu32 WRP21R_PRG;       /*!< FLASH write sector group protection to program register for bank2, Address offset: 0x1EC */
+  vu32 EDATA2R_CUR;     /*!< FLASH data sectors configuration current register for bank2,       Address offset: 0x1F0 */
+  vu32 EDATA2R_PRG;     /*!< FLASH data sectors configuration to program register for bank2,    Address offset: 0x1F4 */
+  vu32 HDP2R_CUR;       /*!< FLASH HDP configuration current register for bank2,                Address offset: 0x1F8 */
+  vu32 HDP2R_PRG;       /*!< FLASH HDP configuration to program register for bank2,             Address offset: 0x1FC */
 } FLASH_TypeDef;
-
 // Flash Keys
 #define FLASH_KEY1               0x45670123
 #define FLASH_KEY2               0xCDEF89AB
@@ -182,6 +196,7 @@ static u32 gFlashSize;                  /* Flash size in bytes */
 static vu32 *pFlashCR;                  /* Pointer to Flash Control register */
 static vu32 *pFlashSR;                  /* Pointer to Flash Status register */
 static vu32 *pFlashCCR;                 /* Pointer to Flash Clear Control register */
+static vu32 *pFlashkey;
 #endif /* FLASH_MEM */
 
 static void DSB(void)
@@ -194,14 +209,50 @@ static void NOP(void)
   __asm ("nop");
 }
 
-//static void __enable_irq(void)
-//{
-//  __asm volatile ("cpsie i" : : : "memory");
-//}
+// Helper macro: set N block-based secure registers of a bank to value
+#define SET_FLASH_SECBB(bank, count, value)     \
+    do {                                        \
+        if ((count) >= 1U) FLASH->SECBB##bank##R1 = (value); \
+        if ((count) >= 2U) FLASH->SECBB##bank##R2 = (value); \
+        if ((count) >= 3U) FLASH->SECBB##bank##R3 = (value); \
+        if ((count) >= 4U) FLASH->SECBB##bank##R4 = (value); \
+        if ((count) >= 5U) FLASH->SECBB##bank##R5 = (value); \
+        if ((count) >= 6U) FLASH->SECBB##bank##R6 = (value); \
+        if ((count) >= 7U) FLASH->SECBB##bank##R7 = (value); \
+        if ((count) >= 8U) FLASH->SECBB##bank##R8 = (value); \
+    } while (0)
+		
+#if    defined(STM32H5xx_512_0x08)  || defined(STM32H5xx_512_0x0C)  || \
+       defined(STM32H5xx_256_0x08)  || defined(STM32H5xx_256_0x0C)
+
+  #define SECBB_REG_COUNT   1U    /* 256K / 512K */
+
+#elif  defined(STM32H5xx_1024_0x08) || defined(STM32H5xx_1024_0x0C)
+
+  #define SECBB_REG_COUNT   2U    /* 1M */
+
+#elif  defined(STM32H5xx_2048_0x08) || defined(STM32H5xx_2048_0x0C)
+
+  #define SECBB_REG_COUNT   4U    /* 2M */
+
+#elif  defined(STM32H5xx_3072_0x08) || defined(STM32H5xx_3072_0x0C)
+
+  #define SECBB_REG_COUNT   6U    /* 3M */
+
+#elif  defined(STM32H5xx_4096_0x08) || defined(STM32H5xx_4096_0x0C)
+
+  #define SECBB_REG_COUNT   8U    /* 4M */
+
+#else
+  #error "Unsupported STM32H5xx flash size define"
+#endif
+
+#define sec_value 0xFFFFFFFFU
+
 
 static void __disable_irq(void)
 {
-//  __asm volatile ("cpsid i" : : : "memory");
+  __asm volatile ("cpsid i" : : : "memory");
 }
 
 
@@ -398,10 +449,13 @@ int Init (unsigned long adr, unsigned long clk, unsigned long fnc)
     pFlashCR  = &FLASH->NSCR;
     pFlashSR  = &FLASH->NSSR;
     pFlashCCR = &FLASH->NSCCR;
-
+		pFlashkey = &FLASH->NSKEYR;
+		
+		if(((*pFlashCR) & FLASH_CR_LOCK) !=0){
     /* unlock FLASH_NSCR */
-    FLASH->NSKEYR = FLASH_KEY1;
-    FLASH->NSKEYR = FLASH_KEY2;
+    *pFlashkey = FLASH_KEY1;
+    *pFlashkey = FLASH_KEY2;
+		}
     DSB();
     while (FLASH->NSSR & FLASH_SR_BSY) NOP();            /* Wait until operation is finished */
   }
@@ -413,27 +467,23 @@ int Init (unsigned long adr, unsigned long clk, unsigned long fnc)
     pFlashCR  = &FLASH->SECCR;
     pFlashSR  = &FLASH->SECSR;
     pFlashCCR = &FLASH->SECCCR;
-
+		pFlashkey = &FLASH->SECKEYR;
+		
     /* unlock FLASH_SECCR */
-    FLASH->SECKEYR = FLASH_KEY1;
-    FLASH->SECKEYR = FLASH_KEY2;
+		if(((*pFlashCR) & FLASH_CR_LOCK) !=0){
+    /* unlock FLASH_NSCR */
+    *pFlashkey = FLASH_KEY1;
+    *pFlashkey = FLASH_KEY2;
+		}
     DSB();
     while (FLASH->SECSR & FLASH_SR_BSY) NOP();           /* Wait until operation is finished */
 
-    /* Flash block-based secure bank1 */
-    FLASH->SECBB1R1 = 0xFFFFFFFF;
-    FLASH->SECBB1R2 = 0xFFFFFFFF;
-    FLASH->SECBB1R3 = 0xFFFFFFFF;
-    FLASH->SECBB1R4 = 0xFFFFFFFF;
+   // Bank1
+    SET_FLASH_SECBB(1, SECBB_REG_COUNT, sec_value);
 
-    if (GetFlashBankMode() == 1U)                        /* Flash secure DUAL BANK */
-    {
-      /* Flash block-based secure bank2 */
-      FLASH->SECBB2R1 = 0xFFFFFFFF;
-      FLASH->SECBB2R2 = 0xFFFFFFFF;
-      FLASH->SECBB2R3 = 0xFFFFFFFF;
-      FLASH->SECBB2R4 = 0xFFFFFFFF;
-    }
+    // Bank2
+    SET_FLASH_SECBB(2, SECBB_REG_COUNT, sec_value);
+		
 			/*set SAU for device info region*/
 	  	M32(0xE000EDD8)=0x0;
 			M32(0xE000EDDC)=0x08FFF800;
@@ -443,8 +493,13 @@ int Init (unsigned long adr, unsigned long clk, unsigned long fnc)
 
   while (*pFlashSR & FLASH_SR_BSY) NOP();                /* Wait until operation is finished */
 
+	#if defined(STM32H5xx_4096_0x08) || defined(STM32H5xx_4096_0x0C) 
+		gFlashSize=0x400000;
+		gFlashBase = adr;
+	#else
   gFlashBase = adr;
   gFlashSize = (M32(FLASHSIZE_BASE) & 0x0000FFFF) << 10;
+#endif
 #endif /* FLASH_MEM */
 
 #if defined FLASH_OPT
