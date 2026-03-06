@@ -13,13 +13,8 @@
   </licenseSets>
 
   <releases>
-    <release version="2.1.2-dev">
+    <release version="2.2.1-dev">
       Active development ...
-      Updated SVD files
-      Updated Flash Programming implementation for STM32H5xx
-      Package Description (pdsc):
-      - Reorganized Flash and SRAM memory regions
-      - Added support for STM32H5E4xx/STM32H5E5xx/STM32H5F4xx/STM32H5F5xx/STM32H563LI/STM32H573LI device list
     </release>
     <release version="1.3.0" date="2024-04-04">
       Updated to STM32Cube_FW_H5 Firmware Package version V1.2.0
